@@ -1,0 +1,11 @@
+# Dependencies of the adaptive eBPF telemetry project (Ubuntu 22.04 / WSL2, kernel 6.18 with BTF)
+# --- Python (experiment runner, workload generator, analysis) ---
+# Python 3.10.12, standard library only. Optional, only for analysis/plots.py:
+matplotlib>=3.5        # installed with: sudo apt install python3-matplotlib (exact version not recorded)
+# --- System packages and tools (install with apt / from source, see documentation/reproducibility_guide.md) ---
+# clang 14.0.0 (BPF target)       gcc 11.4.0          make
+# libelf-dev  zlib1g-dev  libssl-dev  git
+# libbpf 1.9.0 (built from source, installed in /usr/local/lib64)
+# bpftool 7.9.0 (built from source, /usr/local/sbin/bpftool)
+# kernel: CONFIG_BPF_SYSCALL, CONFIG_BPF_JIT, CONFIG_BPF_EVENTS, CONFIG_DEBUG_INFO_BTF, CONFIG_PERF_EVENTS, CONFIG_TRACEPOINTS
+# optional for the report: a LaTeX distribution with the IEEEtran class (Overleaf has it built in)

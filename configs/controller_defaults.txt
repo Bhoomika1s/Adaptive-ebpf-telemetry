@@ -1,0 +1,16 @@
+# Default controller settings (controller/telemetry.c); override with --option value after the positional arguments.
+sw-med      20000   switches/s   enter MEDIUM above this rate
+sw-high     200000  switches/s   enter HIGH above this rate
+busy-med    0.5     fraction     enter MEDIUM above this CPU busy fraction
+busy-high   0.9     fraction     enter HIGH above this CPU busy fraction
+hyst        0.7     factor       de-escalate only when signals are below hyst x entry thresholds
+recover     3       intervals    consecutive quiet intervals needed to de-escalate
+dwell-ms    2000    ms           minimum time a level is held before de-escalation
+signal      0       0=both 1=switch rate only 2=busy fraction only
+budget      0       % of one core (0 = no budget controller)
+budget-win  10      s            credit-bucket window
+horizon     1.0     s            projection horizon (0.3 used in all budget runs of the report)
+promote-s   0       s            promotion rule off by default (2 used in the borderline-anomaly runs)
+interval    200     ms           control interval (positional argument 6)
+hz          200     Hz           busy-fraction sampling rate (positional argument 7)
+sample_n    100     events       MEDIUM records 1 switch in N (positional argument 2)
